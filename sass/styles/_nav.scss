@@ -1,0 +1,31 @@
+@use '../variables.scss' as v;
+@use '../abstracts/mixins.scss' as mix;
+
+nav {
+    @include mix.left-right-margin(2em);
+    @include mix.bottom-top-margin(2em);
+   color: v.$White;
+  ul {
+      
+      list-style: none;
+        li  a {
+            text-decoration: none;
+            color: v.$White;
+        }
+    } 
+}
+
+.brand-hamburger{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.menu-list{
+    display: none;
+}
+
+.we-are-creatives{
+    margin-top: 2em;
+
+}

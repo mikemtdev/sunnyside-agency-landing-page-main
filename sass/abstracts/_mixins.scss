@@ -1,0 +1,13 @@
+@mixin left-right-margin($arg) {
+    margin-right: $arg;
+    margin-left: $arg;
+}
+
+@mixin bottom-top-margin($arg) {
+    margin-top: $arg;
+    margin-bottom: $arg;
+}
+@mixin bottom-top-margin($arg) {
+    padding-top: $arg;
+    padding-bottom: $arg;
+}

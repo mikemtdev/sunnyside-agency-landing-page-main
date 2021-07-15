@@ -1,0 +1,133 @@
+@use '../variables' as v;
+@use '../abstracts/sizes' as *;
+@use '../abstracts/margins' as *;
+@use '../abstracts/mixins.scss' as mix;
+@import url(v.$Fraunces-Font-Family);
+
+// Generating font sizes from map
+@each $device, $sizes,
+  $em-size in $font-sizes
+{
+  @each $value, $size in $sizes {
+    .fonts-device-#{$device}-#{$value} {
+      font-size: $size;
+      font-weight: 900;
+    }
+  }
+}
+
+// Generating margins from map values
+@each $margin, $margin-value in $margins
+{
+  .m-#{$margin} {
+    margin: $margin-value;
+  }
+  .mt-#{$margin} {
+    margin-top: $margin-value;
+  }
+  .mb-#{$margin} {
+    margin-bottom: $margin-value;
+  }
+  .mh-#{$margin} {
+    margin-left: $margin-value;
+    margin-right: $margin-value;
+  }
+  .mv-#{$margin} {
+    margin-top: $margin-value;
+    margin-bottom: $margin-value;
+  }
+}
+
+.hero-view {
+  background-image: url('../../images/mobile/image-header.jpg');
+  height: 100vh;
+  // background-image: url('../../images/mobile/image-header.jpg');
+
+  // width: 100vw;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .we-are-creatives {
+    font-family: v.$Barlow-serif;
+    font-size: v.$Font-base-size * 2;
+    font-weight: v.$Fraunces-Weights-9;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    color: v.$White;
+    margin-bottom: 2em;
+    @include mix.left-right-margin(1em);
+  }
+  .arrow {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.img-common {
+  width: 100%;
+}
+
+.text-common {
+  text-align: center;
+  font-family: v.$Fraunces-serif;
+}
+.pragraph-common {
+  font-family: v.$Barlow;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+.opacity {
+  opacity: 0.7;
+}
+.opacity-1 {
+  opacity: 0.1;
+}
+.opacity-2 {
+  opacity: 0.2;
+}
+.opacity-3 {
+  opacity: 0.3;
+}
+
+.Graphic-D {
+  background-image: url('../../images/mobile/image-graphic-design.jpg');
+  height: 100vh;
+  // background-image: url('../../images/mobile/image-header.jpg');
+
+  // width: 100vw;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  .text {
+    position: relative;
+    bottom: -57%;
+    color: v.$Dark-desaturated-cyan-graphic-design-text;
+  }
+}
+.Photography {
+  background-image: url('../../images/mobile/image-photography.jpg');
+  height: 100vh;
+  // background-image: url('../../images/mobile/image-header.jpg');
+
+  // width: 100vw;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  .text {
+    position: relative;
+    bottom: -62%;
+    color: v.$Dark-blue-photography-text;
+  }
+}
+// Testimonial section
+// Img
+// paragraph
+// name
+// title
+.testimonial {
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}

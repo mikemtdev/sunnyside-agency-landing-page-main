@@ -1,4 +1,17 @@
+@use 'styles/nav.scss';
+@use 'styles/hero-view';
+@use './variables' as v;
+
+// @import url(v.$Barlow-Font-Family);
+
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
 }
+// nav
+body {
+  min-height: 100%;
+}
+// Hero View
