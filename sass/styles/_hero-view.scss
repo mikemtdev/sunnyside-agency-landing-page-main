@@ -5,6 +5,10 @@
 @import url(v.$Fraunces-Font-Family);
 
 // Generating font sizes from map
+
+* {
+  margin: 0;
+}
 @each $device, $sizes,
   $em-size in $font-sizes
 {
@@ -40,7 +44,7 @@
 
 .hero-view {
   background-image: url('../../images/mobile/image-header.jpg');
-  height: 100vh;
+  height: 100%;
   // background-image: url('../../images/mobile/image-header.jpg');
 
   // width: 100vw;
@@ -130,4 +134,104 @@
 .testimonial {
   letter-spacing: 8px;
   text-transform: uppercase;
+  .testimanial_client_card {
+  }
+}
+.testimanial_client_img {
+  object-fit: contain;
+  width: 4.5em;
+  border-radius: 14em;
+  margin-bottom: 2.4em;
+}
+.testimanial_client_para {
+  margin-bottom: 3em;
+}
+
+.testimanial_client_name {
+  margin-bottom: 0.6em;
+  font-size: 1.2em;
+}
+.testimanial_client_title {
+  opacity: 0.3;
+  margin-bottom: 6em;
+}
+
+.gallary {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(10em, 1fr)
+  );
+}
+div .gallary-img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+footer {
+  text-align: center;
+  min-width: 100%;
+  height: 100%;
+  padding: 5em 0;
+  background-color: v.$Dark-moderate-cyan-footer-bg;
+
+  .brand {
+    .brand-footer-img {
+      height: 2em;
+    }
+  }
+  ul {
+    margin-top: 3em;
+    list-style: none;
+    li {
+      display: inline;
+      a {
+        color: v.$Dark-moderate-cyan-footer;
+        text-decoration: none;
+        padding: 1em;
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 570px) {
+  .transform-your-brand {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    .img-common-container {
+      width: 100%;
+    }
+    .text-container {
+      display: flex;
+      flex-direction: column;
+
+      // justify-content: center;
+      width: 100%;
+      // padding-left: 5em;
+
+      margin: 0;
+      .pragraph-common {
+        width: 70%;
+      }
+    }
+  }
+  p,
+  h1 {
+    text-align: left;
+  }
+
+  .stand-out {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .text-container {
+      // min-width: 40%;
+    }
+  }
+  .GandP {
+    display: flex;
+  }
 }

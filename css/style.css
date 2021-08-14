@@ -27,6 +27,10 @@ nav ul li a {
   margin-top: 2em;
 }
 
+* {
+  margin: 0;
+}
+
 .fonts-device-small-base {
   font-size: 1em;
   font-weight: 900;
@@ -306,7 +310,7 @@ nav ul li a {
 
 .hero-view {
   background-image: url("../../images/mobile/image-header.jpg");
-  height: 100vh;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -386,7 +390,95 @@ nav ul li a {
   letter-spacing: 8px;
   text-transform: uppercase;
 }
+.testimanial_client_img {
+  object-fit: contain;
+  width: 4.5em;
+  border-radius: 14em;
+  margin-bottom: 2.4em;
+}
 
+.testimanial_client_para {
+  margin-bottom: 3em;
+}
+
+.testimanial_client_name {
+  margin-bottom: 0.6em;
+  font-size: 1.2em;
+}
+
+.testimanial_client_title {
+  opacity: 0.3;
+  margin-bottom: 6em;
+}
+
+.gallary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+}
+
+div .gallary-img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+footer {
+  text-align: center;
+  min-width: 100%;
+  height: 100%;
+  padding: 5em 0;
+  background-color: #87c4b8;
+}
+footer .brand .brand-footer-img {
+  height: 2em;
+}
+footer ul {
+  margin-top: 3em;
+  list-style: none;
+}
+footer ul li {
+  display: inline;
+}
+footer ul li a {
+  color: #458c7e;
+  text-decoration: none;
+  padding: 1em;
+}
+
+@media screen and (min-width: 570px) {
+  .transform-your-brand {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+  .transform-your-brand .img-common-container {
+    width: 100%;
+  }
+  .transform-your-brand .text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+  .transform-your-brand .text-container .pragraph-common {
+    width: 70%;
+  }
+
+  p,
+h1 {
+    text-align: left;
+  }
+
+  .stand-out {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .GandP {
+    display: flex;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
