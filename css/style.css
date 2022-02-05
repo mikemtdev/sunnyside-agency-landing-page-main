@@ -27,8 +27,16 @@ nav ul li a {
   margin-top: 2em;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 * {
+  scroll-behavior: smooth;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .fonts-device-small-base {
@@ -308,11 +316,20 @@ nav ul li a {
   margin-bottom: 10em;
 }
 
+.mtop-5 {
+  margin-top: 5;
+}
+
 .hero-view {
   background-image: url("../../images/mobile/image-header.jpg");
-  height: 100%;
+  max-height: 100vh;
+  width: 100vw;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.hero-view .menu_desktop {
+  display: none;
 }
 .hero-view .we-are-creatives {
   font-family: "Barlow", serif;
@@ -328,6 +345,7 @@ nav ul li a {
 }
 .hero-view .arrow {
   display: flex;
+  padding-bottom: 5em;
   justify-content: center;
 }
 
@@ -362,27 +380,107 @@ nav ul li a {
   opacity: 0.3;
 }
 
+.learn_more {
+  background-color: transparent;
+  border: none;
+  text-decoration: solid overline;
+  text-decoration: underline;
+  text-decoration-thickness: 0.3em;
+  text-underline-offset: 1.5px;
+  text-decoration-skip: objects;
+}
+
+.learn_more-underline-color-1 {
+  margin-top: 1em;
+  text-decoration-color: #fcf0b6;
+}
+
+.learn_more-underline-color-2 {
+  margin-top: 1em;
+  text-decoration-color: #fac4bd;
+}
+
+.learn_more-underline-color-1:hover {
+  text-decoration-color: #fad400;
+}
+
+.learn_more-underline-color-2:hover {
+  text-decoration-color: #fe7867;
+}
+
+.GandP {
+  min-height: 100vh;
+}
+
 .Graphic-D {
   background-image: url("../../images/mobile/image-graphic-design.jpg");
   height: 100vh;
+  text-align: start;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  justify-content: center;
+  object-fit: contain;
 }
 .Graphic-D .text {
+  margin-bottom: 1.5em;
   position: relative;
-  bottom: -57%;
+  color: #25564b;
+}
+
+.Graphic-D_Desktop {
+  background-image: url("../../images/desktop/image-graphic-design.jpg");
+  height: 100vh;
+  text-align: start;
+  display: none;
+  align-items: flex-end;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  object-fit: contain;
+}
+.Graphic-D_Desktop .text {
+  width: 50%;
+  margin-bottom: 10em;
+  position: relative;
   color: #25564b;
 }
 
 .Photography {
   background-image: url("../../images/mobile/image-photography.jpg");
   height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .Photography .text {
+  margin-bottom: 1.5em;
   position: relative;
-  bottom: -62%;
+  color: #19536b;
+}
+
+.Photography_Desktop {
+  background-image: url("../../images/desktop/image-photography.jpg");
+  height: 100vh;
+  width: 100%;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Photography_Desktop .text {
+  width: 50%;
+  margin-bottom: 1.5em;
+  position: relative;
   color: #19536b;
 }
 
@@ -390,6 +488,7 @@ nav ul li a {
   letter-spacing: 8px;
   text-transform: uppercase;
 }
+
 .testimanial_client_img {
   object-fit: contain;
   width: 4.5em;
@@ -414,9 +513,13 @@ nav ul li a {
 .gallary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  row-gap: 0;
+  column-gap: 0;
 }
 
-div .gallary-img {
+.gallary-img {
   object-fit: contain;
   max-width: 100%;
 }
@@ -443,42 +546,191 @@ footer ul li a {
   text-decoration: none;
   padding: 1em;
 }
+footer ul li a:hover {
+  color: #fff;
+}
+footer .socials li a svg {
+  color: white;
+}
 
 @media screen and (min-width: 570px) {
-  .transform-your-brand {
+  .hero-view {
+    background-image: url("../../images/desktop/image-header.jpg");
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hero-view .brand-hamburger {
+    display: none;
+  }
+  .hero-view .menu_desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+  }
+  .hero-view .menu_desktop .menu-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero-view .menu_desktop .menu-list li {
+    padding: 0.5em 1em;
+    margin: 0 0.3em;
+  }
+  .hero-view .menu_desktop .menu-list li:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 0.5em;
+    color: #fff;
+    transform: translateY(-0.5em);
+  }
+  .hero-view .menu_desktop .menu-list li:last-child {
+    padding: 0.5em 2em;
+    border-radius: 30em;
+    border-width: 0.1rem;
+    border-style: solid;
+    background: white;
+    text-decoration-line: none;
+    transform: none;
+  }
+  .hero-view .menu_desktop .menu-list li:last-child a {
+    color: #000;
+  }
+  .hero-view .menu_desktop .menu-list li:hover:last-child {
+    border-radius: 30em;
+    background-color: rgba(255, 255, 255, 0.301);
+    border-color: transparent;
+    border-width: 0.1rem;
+    border-style: solid;
+  }
+  .hero-view .menu_desktop .menu-list li:hover:last-child a {
+    color: white;
+  }
+  .hero-view .container-weAreCreatives-arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .hero-view .container-weAreCreatives-arrow .we-are-creatives {
+    font-family: "Barlow", serif;
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    color: white;
+    margin-bottom: 5em;
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+  .hero-view .container-weAreCreatives-arrow .arrow {
+    display: flex;
+    justify-content: center;
+  }
+
+  .learn_more_pragraph {
+    margin-top: 20px;
+  }
+
+  .transform-your-brand {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 0px 0px;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
     align-items: center;
     justify-content: center;
-    flex-direction: row-reverse;
+    grid-auto-flow: dense;
+    direction: rtl;
   }
   .transform-your-brand .img-common-container {
     width: 100%;
+    min-height: 100%;
   }
   .transform-your-brand .text-container {
+    text-align: left;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding-left: 5em;
+    padding-right: 5em;
     margin: 0;
   }
-  .transform-your-brand .text-container .pragraph-common {
-    width: 70%;
-  }
-
-  p,
-h1 {
-    text-align: left;
-  }
-
   .stand-out {
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 0px 0px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
   }
+  .stand-out .text-container {
+    text-align: left;
+    padding-left: 5em;
+    padding-right: 5em;
+    margin-bottom: 3rem;
+  }
+
+  .Graphic-D {
+    display: none;
+  }
+
+  .Graphic-D_Desktop {
+    display: flex;
+  }
+  .Graphic-D_Desktop .text {
+    margin-bottom: 5em;
+    position: relative;
+    color: #19536b;
+  }
+
+  .Photography {
+    display: none;
+  }
+
+  .Photography_Desktop {
+    display: flex;
+  }
+  .Photography_Desktop .text {
+    margin-bottom: 5em;
+    position: relative;
+    color: #19536b;
+  }
+
   .GandP {
     display: flex;
+    max-height: 10%;
+  }
+
+  .testimonials-constaner {
+    display: flex;
+    justify-content: space-around;
+  }
+  .testimonials-constaner .testimanial_client_card {
+    padding: 1em;
+  }
+
+  div .gallary-img {
+    object-fit: contain;
+    max-width: 100%;
   }
 }
+.attribution {
+  font-size: 0.8em;
+  text-align: center;
+  background-color: #23303e;
+  padding: 1em;
+  color: #fff;
+}
+.attribution a {
+  color: #fad400;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
